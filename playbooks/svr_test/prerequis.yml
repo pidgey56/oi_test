@@ -1,4 +1,4 @@
-- hosts: ubuntu
+- hosts: ubuntu1
   tasks:
     - name: "test of shell task"
       shell: "echo testansible > /home/pierre/Desktop/ansible-file"
