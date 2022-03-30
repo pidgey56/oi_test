@@ -2,4 +2,4 @@
 ansible_connection = ssh
 
 [ubuntu]
-ubuntu1 ansible_host=192.168.1.58 ansible_user=pierre ansible_private_key_file=/var/jenkins_home/oi_test/playbooks/remote-key
+#ubuntu1 ansible_host=192.168.1.58 ansible_user=pierre ansible_private_key_file=/var/jenkins_home/oi_test/playbooks/remote-key
