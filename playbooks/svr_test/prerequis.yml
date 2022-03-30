@@ -1,3 +1,8 @@
+- hosts: test1
+  tasks:
+    - name: "test of shell task"
+      shell: "echo testansible > /tmp/ansible-file"
+
 - hosts: ubuntu1
   tasks:
     - name: "test of shell task"
