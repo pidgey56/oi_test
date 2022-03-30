@@ -4,9 +4,6 @@ Test Setup    Open connection and log in    ${HOST}    ${USERNAME}    ${PASSWORD
 Test Teardown    Close All Connections
 
 *** Variable ***
-${HOST}    192.168.1.58
-${USERNAME}    pierre
-${PASSWORD}    0db9182b6b
 ${write_read_timeout}    10 seconds
 
 *** Test Cases ***
