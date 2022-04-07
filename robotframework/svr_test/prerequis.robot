@@ -10,8 +10,8 @@ ${write_read_timeout}    10 seconds
 Execute Command And Verify Output
     [Documentation]    Execute Command can be used to ran commands on the remote machine.
     ...                The keyword returns the standard output by default.
-    Execute Command    touch /home/pierre/Desktop/test2
-    ${output}=    Execute Command    ls /home/pierre/Desktop
+    Execute Command    touch /var/tmp/test
+    ${output}=    Execute Command    ls /var/tmp/
     log   ${output}
     Close Connection
 
