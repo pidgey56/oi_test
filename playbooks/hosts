@@ -2,4 +2,4 @@
 ansible_connection = ssh
 
 [unix]
-NOEYYCZ9 ansible_host=10.120.177.77 ansible_user=admsrv ansible_password=EdfP@ssw0rd2018
+NOEYYCZ9 ansible_host=10.120.177.77 ansible_user=admsrv ansible_password=EdfP@ssw0rd2018 ansible_ssh_args=-q
