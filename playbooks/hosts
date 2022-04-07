@@ -1,5 +1,5 @@
 [all:vars]
 ansible_connection = ssh
 
-[ubuntu]
-NOEYYCZ9 ansible_host=10.120.177.77 ansible_user=pierre ansible_private_key_file=/var/jenkins_home/oi_test/playbooks/remote-key
+[unix]
+NOEYYCZ9 ansible_host=10.120.177.77 ansible_user=admsrv ansible_password=EdfP@ssw0rd2018
