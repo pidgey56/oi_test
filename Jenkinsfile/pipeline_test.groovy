@@ -1,3 +1,5 @@
+def steps = ""
+
 pipeline{
     //definition des agents : je sais pas encore trop a quoi ça sert
     agent any
@@ -23,8 +25,10 @@ pipeline{
         }
         stage ('Defining steps'){
             steps {
-                steps = readJSON file : '/var/tmp/oi_test/steps/${OINAME}/steps.json'
-                println steps
+                scripts{
+                    steps = readJSON file : '/var/tmp/oi_test/steps/${OINAME}/steps.json'
+                    println steps
+                }
             }
         }
     }
