@@ -21,9 +21,7 @@ pipeline{
         }
         stage ('Defining the steps'){
             steps {
-                script {
-                    println ${steps_qualif}
-                }
+                echo "contenue de la variable ${steps_qualif}"
             }
         }
     }
