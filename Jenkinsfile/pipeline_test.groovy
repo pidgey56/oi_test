@@ -17,12 +17,5 @@ pipeline{
                     '''
             }
         }
-        stage ('Defining the steps'){
-            steps {
-                sh '''
-                    echo 'Hello'
-                    '''
-            }
-        }
     }
 }
