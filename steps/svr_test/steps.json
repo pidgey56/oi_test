@@ -1,5 +1,37 @@
 {
-    "fruit": "Apple",
-    "size": "Large",
-    "color": "Red"
+  "prerequis": {
+    "guide_securite": "no",
+    "snapshot_init" : "yes",
+    "playbook": "yes",
+    "common": "no",
+    "robotframework": "yes"
+  },
+  "postinstallation":{
+      "playbook":"no",
+      "reboot":"no",
+      "guide_securite":"no",
+      "common":"no",
+      "robotframework":"no"
+  },
+  "desinstallation":{
+    "playbook":"no",											
+    "guide_securite":"no",			
+    "common":"no",					 
+    "robotframework":"no" 
+  },
+  "migration":{
+    "retour_snapshot":"no",
+    "playbook":"no",											
+    "guide_securite":"no",			
+    "common":"no",					 
+    "robotframework":"no" 
+  },
+  "noninstallation":{
+      "retour_snapshot":"no",
+      "playbook":"no"
+  },
+  "finalisation":{
+    "retour_snapshot":"no",
+    "destruction_vm":"no"
+  }
 }
