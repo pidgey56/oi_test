@@ -21,6 +21,7 @@ pipeline{
         }
         stage ('Defining the steps'){
             steps {
+                steps_qualif = readJSON file: '/var/tmp/steps/svr_test/steps.json'
                 echo "contenue de la variable ${steps_qualif}"
             }
         }
