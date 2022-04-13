@@ -23,13 +23,13 @@ pipeline{
                     '''
             }
         }
-        stage ('Defining steps'){
-            steps {
-                scripts{
-                    steps = readJSON file : '/var/tmp/oi_test/steps/${OINAME}/steps.json'
-                    println steps
-                }
-            }
-        }
+        // stage ('Defining steps'){
+        //     steps {
+        //         scripts{
+        //             steps = readJSON file : '/var/tmp/oi_test/steps/${OINAME}/steps.json'
+        //             println steps
+        //         }
+        //     }
+        // }
     }
 }
