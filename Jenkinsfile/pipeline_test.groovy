@@ -75,7 +75,11 @@ pipeline{
     }
     post{
         success{
-            echo "success publish robotframework"
+            RobotPublisher(
+                outputPath: "/var/tmp/robotoutput/$HOST",
+                passThreshold: "1",
+                unstableThreshold: "0"
+            )
         }
     }
 }
