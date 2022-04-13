@@ -87,15 +87,16 @@ pipeline{
 				reportFileName: 'report.html',
 				unstableThreshold: 80]
 			)
-            step(
-                publishHTML (target : [allowMissing: false,
+
+            publishHTML (target : [allowMissing: false,
                 alwaysLinkToLastBuild: true,
                 keepAll: true,
                 reportDir: 'reports',
                 reportFiles: "/var/tmp/robotoutput/$HOST/report.html",
                 reportName: 'My Reports',
-                reportTitles: 'The Report'])
+                reportTitles: 'The Report']
             )
+            
         }
     }
 }
