@@ -52,7 +52,7 @@ pipeline{
                 ansiblePlaybook (
                     playbook: "/var/tmp/oi_test/playbooks/$OINAME/prerequis.yml",
                     inventory: "/var/tmp/oi_test/playbooks/hosts",
-                    colorized: true,
+                    colorized: false,
                 )
             }
         }
