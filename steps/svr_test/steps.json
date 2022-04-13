@@ -1,7 +1,7 @@
 {
   "prerequis": {
+    "snapshot_init" : "no",
     "guide_securite": "no",
-    "snapshot_init" : "yes",
     "playbook": "yes",
     "common": "no",
     "robotframework": "yes"

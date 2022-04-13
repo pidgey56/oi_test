@@ -27,12 +27,45 @@ pipeline{
                 // sh echo "contenue de la variable ${steps_qualif}"
             }
         }
-        stage ("Print variable") {
-
+        stage ("PREREQUIS : création d'un snapshot"){
+            when{
+                expression { return ( steps_qualif['prerequis']['snapshot_init'] == "yes" )}
+            }
             steps {
-                echo "My variable is ${steps_qualif}"
+                sh echo "you have failed"
             }
         }
-        // stage ("")
+        stage ('PREREQUIS : guide de securité'){
+            when{
+                expression { return ( steps_qualif['prerequis']['guide_securite'] == "yes" )}
+            }
+            steps {
+                sh echo "you have failed"
+            }
+        }
+        stage ("PREREQUIS : execution de playbook prerequis.yml"){
+            when{
+                expression { return ( steps_qualif['prerequis']['playbook'] == "yes" )}
+            }
+            steps{
+                sh echo "GREAT SUCCESS, VERY GOOD VERY NICE"
+            }
+        }
+        stage ("PREREQUIS : execution des tests robotframeworks commons"){
+            when{
+                expression { return ( steps_qualif['prerequis']['common'] == "yes" )}
+            }
+            steps{
+                sh echo "you have failed"
+            }
+        }
+        stage ("PREREQUIS : execution des tests robotframework OI"){
+            when{
+                expression { return ( steps_qualif['prerequis']['robotframework'] == "yes" )}
+            }
+            steps{
+                sh echo "ok"
+            }
+        }        
     }
 }
