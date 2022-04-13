@@ -1,6 +1,3 @@
-def jenkinsContainerLabel = "agent-ansible-robotframework-stable"
-
-
 pipeline{
     //definition des agents : je sais pas encore trop a quoi ça sert
     agent any
