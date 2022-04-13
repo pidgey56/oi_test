@@ -2,7 +2,13 @@ def jenkinsContainerLabel = "agent-ansible-robotframework-stable"
 
 
 pipeline{
+    //definition des agents : je sais pas encore trop a quoi ça sert
     agent any
+    //définition des options de la pipeline
+    options {
+        buildDiscarder(logRotator(numToKeepStr:'15')) // on concerve que les résultats des 15 derniers builds
+        timeout(time: 120, unit: 'MINUTES') // la pipeline fail après deux heures sans résultats
+    }
     // définition des parametres necessaires pour realiser le lancement d'un playbook quelconque
     parameters {
         // Informations nécessaire pour la connection a la VM
