@@ -23,7 +23,7 @@ pipeline{
             steps {
                 script{
 
-                    steps_qualif = readJSON file: '/var/tmp/steps/svr_test/steps.json'
+                    steps_qualif = readJSON text: '[ "a", "b"]'
                 }
                 // sh echo "contenue de la variable ${steps_qualif}"
             }
