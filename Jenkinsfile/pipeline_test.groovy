@@ -74,7 +74,7 @@ pipeline{
         }        
     }
     post{
-        steps{
+        success{
             echo "success publish robotframework"
         }
     }
