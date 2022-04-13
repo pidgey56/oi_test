@@ -1,4 +1,4 @@
-def steps = "hola"
+// def steps = "hola"
 pipeline{
     //definition des agents : je sais pas encore trop a quoi ça sert
     agent any
