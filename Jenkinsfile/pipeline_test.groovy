@@ -8,7 +8,7 @@ pipeline{
     parameters {
         string(defaultValue: 'svr_test', name: 'OINAME', description: "nom de l'OI en cours de qualification")
     }
-    stages {
+stages {
         stage ('Update Git'){
             steps {
                 sh '''
@@ -17,5 +17,6 @@ pipeline{
                     '''
             }
         }
+
     }
 }
