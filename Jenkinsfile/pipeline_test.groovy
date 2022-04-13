@@ -23,7 +23,7 @@ pipeline{
         }
         stage ('Defining steps'){
             steps {
-                def steps = readJSON file : '/var/tmp/oi_test/steps/${OINAME}/steps.json'
+                steps = readJSON file : '/var/tmp/oi_test/steps/${OINAME}/steps.json'
                 println steps
             }
         }
