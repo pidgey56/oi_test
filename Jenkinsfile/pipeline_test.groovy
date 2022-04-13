@@ -22,13 +22,13 @@ pipeline{
         stage ('Defining the steps'){
             steps {
                 script{
-
-                    steps_qualif = readJSON file: '/var/tmp/oi_test/steps/svr_test/steps.json'
+                    steps_qualif = readJSON file: '/var/tmp/oi_test/steps/${OINAME}/steps.json'
                 }
                 // sh echo "contenue de la variable ${steps_qualif}"
             }
         }
         stage ("Print variable") {
+
             steps {
                 echo "My variable is ${steps_qualif}"
             }
