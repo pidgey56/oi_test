@@ -32,7 +32,7 @@ pipeline{
                 expression { return ( steps_qualif['prerequis']['snapshot_init'] == "yes" )}
             }
             steps {
-                sh echo "you have failed"
+                echo "you have failed"
             }
         }
         stage ('PREREQUIS : guide de securité'){
@@ -40,7 +40,7 @@ pipeline{
                 expression { return ( steps_qualif['prerequis']['guide_securite'] == "yes" )}
             }
             steps {
-                sh echo "you have failed"
+                echo "you have failed"
             }
         }
         stage ("PREREQUIS : execution de playbook prerequis.yml"){
@@ -48,7 +48,7 @@ pipeline{
                 expression { return ( steps_qualif['prerequis']['playbook'] == "yes" )}
             }
             steps{
-                sh echo "GREAT SUCCESS, VERY GOOD VERY NICE"
+                echo "GREAT SUCCESS, VERY GOOD VERY NICE"
             }
         }
         stage ("PREREQUIS : execution des tests robotframeworks commons"){
@@ -56,7 +56,7 @@ pipeline{
                 expression { return ( steps_qualif['prerequis']['common'] == "yes" )}
             }
             steps{
-                sh echo "you have failed"
+                echo "you have failed"
             }
         }
         stage ("PREREQUIS : execution des tests robotframework OI"){
@@ -64,7 +64,7 @@ pipeline{
                 expression { return ( steps_qualif['prerequis']['robotframework'] == "yes" )}
             }
             steps{
-                sh echo "ok"
+                echo "ok"
             }
         }        
     }
