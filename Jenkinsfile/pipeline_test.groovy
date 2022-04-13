@@ -28,9 +28,9 @@ pipeline{
                 // sh echo "contenue de la variable ${steps_qualif}"
             }
         }
-        stage ('Reading the steps'){
-            steps{
-                echo "contenue de la variable ${steps_qualif}"
+        stage ("Print variable") {
+            steps {
+                echo "My variable is ${steps_qualif}"
             }
         }
     }
