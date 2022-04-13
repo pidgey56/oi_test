@@ -1,4 +1,4 @@
-def steps_qualif = "hola" // définition du receptacle des étapes
+def steps_qualif = "" // définition du receptacle des étapes
 //note on passe du txt au json pour de futures utilisations plus cools 
 
 pipeline{
@@ -22,7 +22,7 @@ pipeline{
         stage ('Defining the steps'){
             steps {
                 script{
-                    steps_qualif = readJSON file: '/var/tmp/oi_test/steps/${OINAME}/steps.json'
+                    steps_qualif = readJSON file: "/var/tmp/oi_test/steps/${OINAME}/steps.json"
                 }
                 // sh echo "contenue de la variable ${steps_qualif}"
             }
@@ -33,5 +33,6 @@ pipeline{
                 echo "My variable is ${steps_qualif}"
             }
         }
+        // stage ("")
     }
 }
