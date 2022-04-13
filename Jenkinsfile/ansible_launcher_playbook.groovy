@@ -44,9 +44,6 @@ pipeline{
                     playbook: "/var/tmp/oi_test/playbooks/$OINAME/$PLAYBOOK_NAME",
                     inventory: "/var/tmp/oi_test/playbooks/hosts",
                     colorized: true,
-                    // extraVars: [
-                    //     //que dalle pour l'instant
-                    // ]
                 )
             }
         }   

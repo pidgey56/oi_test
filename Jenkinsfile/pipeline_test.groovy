@@ -1,3 +1,5 @@
+def steps_qualif = "hola" // définition du receptacle des étapes
+//note on passe du txt au json pour de futures utilisations plus cools 
 
 pipeline{
     agent any
@@ -20,7 +22,7 @@ pipeline{
         stage ('Defining the steps'){
             steps {
                 script {
-                    println "steps"
+                    println ${steps_qualif}
                 }
             }
         }
