@@ -1,4 +1,8 @@
+def jenkinsContainerLabel = "agent-ansible-robotframework-stable"
+
+
 pipeline{
+    agent any
     // définition des parametres necessaires pour realiser le lancement d'un playbook quelconque
     parameters {
         // Informations nécessaire pour la connection a la VM
@@ -19,10 +23,10 @@ pipeline{
         // TODO : faire en sorte de pouvoir pull sur la branche choisit dans les parametres
         stage ('Update Git'){
             steps {
-                bash '''
+                sh '''
                     cd /var/tmp/oi_test;
                     git pull;
-                '''
+                    '''
             }
         }
         // TODO : faire en sorte de pouvoir modifier le host file pour y mettre les informations de la vm cible
