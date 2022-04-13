@@ -75,11 +75,18 @@ pipeline{
     }
     post{
         success{
-            RobotPublisher(
-                outputPath: "/var/tmp/robotoutput/$HOST",
-                passThreshold: "1",
-                unstableThreshold: "0"
-            )
+            step (
+				[$class: 'RobotPublisher',
+				disableArchiveOutput: false,
+				logFileName: 'log.html',
+				onlyCritical: true,
+				otherFiles: '',
+				outputFileName: 'output.xml',
+				outputPath: "/var/tmp/robotoutput/$HOST",
+				passThreshold: 100,
+				reportFileName: 'report.html',
+				unstableThreshold: 80]
+			)
         }
     }
 }
