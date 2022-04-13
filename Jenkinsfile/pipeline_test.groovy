@@ -8,6 +8,8 @@ pipeline{
         timeout(time: 120, unit: 'MINUTES') // la pipeline fail après deux heures sans résultats
     }
     parameters {
+        string(defaultValue: '10.120.177.77', name: 'HOST', description: "adresse IP de la machine sur laquelle effectuer le playbook")
+        password(name: 'PASSWORD', description: "mot de passe pour se connecter à la VM", defaultValue:"EdfP@ssw0rd2018")
         string(defaultValue: 'svr_test', name: 'OINAME', description: "nom de l'OI en cours de qualification")
     }
     stages {
@@ -24,7 +26,6 @@ pipeline{
                 script{
                     steps_qualif = readJSON file: "/var/tmp/oi_test/steps/${OINAME}/steps.json"
                 }
-                // sh echo "contenue de la variable ${steps_qualif}"
             }
         }
         stage ("PREREQUIS : création d'un snapshot"){
@@ -32,7 +33,7 @@ pipeline{
                 expression { return ( steps_qualif['prerequis']['snapshot_init'] == "yes" )}
             }
             steps {
-                echo "you have failed"
+                echo "NON FONCTIONNEL ACTUELLEMENT : ABSENCE DE VSPHERE"
             }
         }
         stage ('PREREQUIS : guide de securité'){
@@ -48,7 +49,11 @@ pipeline{
                 expression { return ( steps_qualif['prerequis']['playbook'] == "yes" )}
             }
             steps{
-                echo "GREAT SUCCESS, VERY GOOD VERY NICE"
+                ansiblePlaybook (
+                    playbook: "/var/tmp/oi_test/playbooks/$OINAME/prerequis.yml",
+                    inventory: "/var/tmp/oi_test/playbooks/hosts",
+                    colorized: true,
+                )
             }
         }
         stage ("PREREQUIS : execution des tests robotframeworks commons"){
@@ -64,7 +69,7 @@ pipeline{
                 expression { return ( steps_qualif['prerequis']['robotframework'] == "yes" )}
             }
             steps{
-                echo "GREAT SUCCESS, VERY GOOD VERY NICE"
+                sh "robot -v HOST:$HOST -v USERNAME:admsrv -v PASSWORD:$PASSWORD --outputdir /var/tmp/robotoutput/$HOST /var/tmp/oi_test/robotframework/$OINAME/prerequis.robot"
             }
         }        
     }

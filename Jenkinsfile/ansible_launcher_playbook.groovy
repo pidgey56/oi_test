@@ -32,12 +32,7 @@ pipeline{
                     '''
             }
         }
-        // TODO : faire en sorte de pouvoir modifier le host file pour y mettre les informations de la vm cible
-        // stage ('Rewrite Host File'){
-        //     steps {
 
-        //     }
-        // }
         stage ('Playbook launch'){
             steps {
                 ansiblePlaybook (
