@@ -18,8 +18,10 @@ pipeline{
             }
         }
         stage ('Defining the steps'){
-            script {
-                println steps
+            steps {
+                script {
+                    println steps
+                }
             }
         }
     }
