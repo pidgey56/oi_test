@@ -73,4 +73,9 @@ pipeline{
             }
         }        
     }
+    post{
+        step('publish robotframework result'){
+            echo "success"
+        }
+    }
 }
