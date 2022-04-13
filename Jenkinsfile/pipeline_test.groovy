@@ -1,4 +1,4 @@
-def steps_qualif = "hola" // définition du receptacle des étapes
+def steps_qualif = readJSON text: '[ "a", "b"]' // définition du receptacle des étapes
 //note on passe du txt au json pour de futures utilisations plus cools 
 
 pipeline{
@@ -19,15 +19,15 @@ pipeline{
                     '''
             }
         }
-        stage ('Defining the steps'){
-            steps {
-                script{
+        // stage ('Defining the steps'){
+        //     steps {
+        //         script{
 
-                    steps_qualif = readJSON text: '[ "a", "b"]'
-                }
-                // sh echo "contenue de la variable ${steps_qualif}"
-            }
-        }
+        //             // steps_qualif = readJSON text: '[ "a", "b"]'
+        //         }
+        //         // sh echo "contenue de la variable ${steps_qualif}"
+        //     }
+        // }
         stage ("Print variable") {
             steps {
                 echo "My variable is ${steps_qualif}"
