@@ -64,7 +64,7 @@ pipeline{
                 expression { return ( steps_qualif['prerequis']['robotframework'] == "yes" )}
             }
             steps{
-                echo "ok"
+                echo "GREAT SUCCESS, VERY GOOD VERY NICE"
             }
         }        
     }
