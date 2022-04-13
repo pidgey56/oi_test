@@ -1,4 +1,4 @@
-
+def steps = "hola"
 pipeline{
     agent any
     options {
@@ -15,6 +15,11 @@ pipeline{
                     cd /var/tmp/oi_test;
                     git pull;
                     '''
+            }
+        }
+        stage ('Defining the steps'){
+            script {
+                println steps
             }
         }
     }
