@@ -19,9 +19,9 @@ pipeline{
         }
         stage ('Defining the steps'){
             steps {
-                script {
-                    println steps
-                }
+                sh '''
+                    echo 'Hello'
+                    '''
             }
         }
     }
