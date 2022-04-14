@@ -91,7 +91,7 @@ pipeline{
             publishHTML (target : [allowMissing: false,
                 alwaysLinkToLastBuild: true,
                 keepAll: true,
-                reportDir: 'reports',
+                reportDir: "/var/tmp/robotoutput/$HOST/",
                 reportFiles: "/var/tmp/robotoutput/$HOST/report.html",
                 reportName: 'My Reports',
                 reportTitles: 'The Report']
